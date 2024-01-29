@@ -6,7 +6,7 @@
 
 class Solution {
 public:
-    int searchInsert(std::vector<int>& nums, int target) 
+    int searchInsert(std::vector<int>& nums, int target)
     {
 
         int left = 0, mid;
@@ -14,26 +14,15 @@ public:
         while (left <= right)
         {
             mid = left + (right - left) / 2;
-            if (nums[mid - 1] >= target && mid != 0)
+            if (nums[mid] >= target)
                 right = mid - 1;
             else
                 left = mid + 1;
         }
-
-        if (left == 0) {
-            if (nums[left] < target)
-                return left + 1;
-            else
-                return left;
-        }
-
-        if (nums[right] < target)
-            return right + 1;
-        else
-            return right;
-
+        return left;
     }
 };
+
 int main()
 {
    
