@@ -8,25 +8,19 @@ class Solution {
 public:
     int removeDuplicates(std::vector<int>& nums) {
 
-        int i, j, lenght = nums.size();
-        for (i = 0, j = 1; j < lenght; ++j)
+        int s = 1;
+        for (int i = 1; i < nums.size(); i++)
         {
-            if (nums[i] != nums[j])
-                ++i;
-            else
+            if (nums[i] > nums[s - 1])
             {
-                int curr = j;
-                for (int k = j + 1; k < lenght; ++k)
-                {
-                    nums[curr] = nums[k];
-                    curr++;
-                }
-                --lenght;
-                --j;
+                int temp = nums[s];
+                nums[s] = nums[i];
+                nums[i] = temp;
+                ++s;
             }
-        }
 
-        return i + 1;
+        }
+        return s;
     }
 };
 
