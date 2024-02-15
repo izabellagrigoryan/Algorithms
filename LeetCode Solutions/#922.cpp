@@ -6,23 +6,18 @@
 
 class Solution {
 public:
-        std::vector<int> sortArrayByParityII(std::vector<int>& nums) {
-        for (int i = 0; i < nums.size(); i += 2)
-        {
-            if (nums[i] % 2 != 0)
-            {
-                int key = nums[i];
-                nums[i] = nums[i + 1];
-                nums[i + 1] = key;
+    std::vector<int> sortArrayByParityII(std::vector<int>& nums)
+    {
+        int k = 0;
+        int j = 1;
+
+        while (k < nums.size()) {
+            if (nums[k] % 2 == 0) {
+                k += 2;
             }
-        }
-        for (int i = 1; i < nums.size(); i += 2)
-        {
-            if (nums[i] % 2 != 1)
-            {
-                int key = nums[i];
-                nums[i] = nums[i + 1];
-                nums[i + 1] = key;
+            else {
+                std::swap(nums[k], nums[j]);
+                j += 2;
             }
         }
         return nums;
@@ -31,5 +26,8 @@ public:
 
 int main()
 {
-   
+    Solution sol;
+    std::vector<int> vec = { 2, 4, 6, 8, 3, 5, 7, 9 };
+    std::vector<int> newvec = sol.sortArrayByParityII(vec);
+    return 0;
 }
