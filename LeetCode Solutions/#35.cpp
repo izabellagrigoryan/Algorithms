@@ -21,7 +21,7 @@ public:
         }
         return left;
     }
-};
+}; 
 
 int main()
 {

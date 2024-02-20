@@ -16,7 +16,7 @@ public:
             max_all = std::max(max_all, nums[i]);
             if (nums[i] < max_left) {
                 partition_index = i;
-                max_left = max_all;
+                max_left = max_all; 
             }
         }
 

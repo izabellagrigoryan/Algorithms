@@ -20,7 +20,7 @@ public:
         return title;
     }
 };
-
+ 
 int main()
 {
     std::cout << "Hello World!\n";

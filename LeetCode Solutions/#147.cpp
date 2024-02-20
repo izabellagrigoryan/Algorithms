@@ -17,7 +17,7 @@ public:
             return head;
 
         ListNode* mid = findMiddle(head);
-        ListNode* midNext = mid->next;
+        ListNode* midNext = mid->next; 
         mid->next = nullptr;
 
         ListNode* left = insertionSortList(head);

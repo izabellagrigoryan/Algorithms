@@ -19,7 +19,7 @@ int removeDuplicates(std::vector<int>& nums)
     }
     return nums.size() - count;
 };
-
+ 
 int main()
 {
 

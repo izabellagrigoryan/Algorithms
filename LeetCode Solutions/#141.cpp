@@ -17,7 +17,7 @@ public:
         ListNode* slow = new ListNode();
         slow = head;
         ListNode* fast = new ListNode();
-        fast = head;
+        fast = head; 
         while (fast != nullptr && fast->next != nullptr)
         {
             fast = fast->next;
